@@ -8,7 +8,7 @@ from requests.exceptions import HTTPError
 
 
 class MyshowsApiBase(object):
-    def __init__(self, login='demo', password='demo', password_md5=None):
+    def __init__(self, login=None, password=None, password_md5=None):
         if password and password_md5:
             raise ValueError("Use password OR password_md5")
 
