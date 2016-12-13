@@ -1,11 +1,8 @@
-from myshows import login
-from myshows import myshows
+from myshows import MyshowsApiBase
 
 def main():
-    myShows_login = login.MyShowsLogin("demo", "demo")
-    myShows = myshows.MyShows(myShows_login)
-    print myShows.profile()
-    print myShows.shows()
+    myshows = MyshowsApiBase('demo', 'demo')
+    print myshows.profile()
 
 if __name__ == "__main__":
     main()
