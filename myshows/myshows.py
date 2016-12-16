@@ -93,7 +93,12 @@ class MyshowsApiBase(object):
 
     def diff_episodes(self, show_id, watched, unwatched):
         url = urlparse.urljoin(constants.API_HOST,
-                               constants.DIFF_PATH.format(s=show_id, w=','.join(watched), u=','.join(unwatched)))
+                               constants.DIFF_PATH.format(
+                                   s=show_id,
+                                   w=','.join(map(str, watched)),
+                                   u=','.join(map(str, unwatched))
+                               )
+                               )
         return self.__api_call(url, None)
 
 
