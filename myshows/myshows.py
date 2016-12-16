@@ -99,7 +99,7 @@ class MyshowsApiBase(object):
                                    u=','.join(map(str, unwatched))
                                )
                                )
-        return self.__api_call(url, None)
+        return self.__api_call(url, None,not_json=True)
 
 
 class MyshowsApiSocial(MyshowsApiBase):
