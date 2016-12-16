@@ -42,7 +42,8 @@ class MyshowsApiBase(object):
             elif req.status_code == 500:
                 raise exceptions.MyShowsInvalidParameter()
         except (HTTPError) as e:
-            print e
+            print
+            e
             raise exceptions.MyShowsException()
 
         if not_json:
@@ -88,6 +89,11 @@ class MyshowsApiBase(object):
 
     def unwatched(self):
         url = urlparse.urljoin(constants.API_HOST, constants.UNWATCHED_PATH)
+        return self.__api_call(url, None)
+
+    def diff_episodes(self, show_id, watched, unwatched):
+        url = urlparse.urljoin(constants.API_HOST,
+                               constants.DIFF_PATH.format(s=show_id, w=','.join(watched), u=','.join(unwatched)))
         return self.__api_call(url, None)
 
 

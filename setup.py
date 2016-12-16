@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='myshows_api',
-    version='0.0.1',
+    version='0.0.2',
     author='alsbi',
     author_email='feanor4ik@gmail.com',
     packages=find_packages(),
